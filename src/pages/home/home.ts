@@ -6,9 +6,9 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  private content;
   constructor(public navCtrl: NavController) {
-
+    this.content = ["Dipak", "Bhushan"];
   }
 
 }

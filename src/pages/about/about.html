@@ -7,5 +7,21 @@
 </ion-header>
 
 <ion-content padding>
-
+  <h1>This is about us page!</h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= "let country of countries; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{country.name}}</td>
+        <td>{{country.code}}</td>
+      </tr>
+    </tbody>
+  </table>
 </ion-content>

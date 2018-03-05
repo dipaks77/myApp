@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Name</th>
+                        <th>Questions</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let test of tests; let i = index">
+                        <td>{{i + 1}}</td>
+                        <td>{{test.name}}</td>
+                        <td>{{test.questions.length}}</td>
+                        <td>
+                            <button class="btn btn-warning" (click)="goToQuestion(test._id)">Start Test</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
