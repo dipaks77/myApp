@@ -1,5 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 import { HttpModule } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -7,6 +8,7 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
+import { PushComponent } from '../pages/push/push.component';
 
 
 import { TestsComponent } from '../pages/tests/tests.component';
@@ -15,6 +17,7 @@ import { QuestionComponent } from '../pages/question/question.component';
 
 
 import { TabsPage } from '../pages/tabs/tabs';
+import { NavbarComponent } from '../pages/navbar/navbar.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -29,7 +32,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
     TestsComponent,
     QuestionComponent,
-    TabsPage
+    NavbarComponent,
+    PushComponent
+    // TabsPage
   ],
   imports: [
     BrowserModule,
@@ -44,11 +49,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TestsComponent,
     QuestionComponent,
-    TabsPage
+    NavbarComponent,
+    PushComponent
+    // TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    LocalNotifications,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

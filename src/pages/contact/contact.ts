@@ -11,4 +11,13 @@ export class ContactPage {
 
   }
 
+
+
+  Submit(form: any, event: Event) {
+    event.preventDefault();
+    if (form.invalid) {
+      return false;
+    }
+    return true;
+  }
 }

@@ -1,7 +1,8 @@
 import { Component } from "@angular/core"
-import { NavParams } from 'ionic-angular';
+import { NavParams, NavController } from 'ionic-angular';
 import { Http } from "@angular/http";
 import 'rxjs/add/operator/map';
+import { TestsComponent } from "../tests/tests.component";
 
 @Component({
     selector: "question",
@@ -22,7 +23,7 @@ export class QuestionComponent {
     private result: number = 0;
 
 
-    constructor(public navParams: NavParams, public http: Http) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
         this.testId = navParams.get("id");
     }
 
@@ -37,8 +38,6 @@ export class QuestionComponent {
                     if (test._id == parent.testId) {
                         parent.testName = test.name;
                         parent.questions = test.questions;
-
-                        console.log("====== Questions =======", parent.questions);
                     }
                 })
             })
@@ -63,12 +62,13 @@ export class QuestionComponent {
             this.result++;
         }
         this.flag = "result";
+        this.btnFlag = "finish";
     }
     saveAns(index) {
         this.userAns = index;
     }
 
     finishTest() {
-        this.flag = "result";
+        this.navCtrl.push(TestsComponent);
     }
 }
