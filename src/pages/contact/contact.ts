@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
+import { LocalNotifications } from '@ionic-native/local-notifications';
+
 
 @Component({
   selector: 'page-contact',
@@ -7,7 +9,7 @@ import { NavController } from 'ionic-angular';
 })
 export class ContactPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public notification: LocalNotifications, public alert: AlertController) {
 
   }
 
@@ -18,6 +20,11 @@ export class ContactPage {
     if (form.invalid) {
       return false;
     }
+    let alert = this.alert.create({
+      title: "Your query has been sent, we will get back to you please wati...",
+      buttons: ["Ok"]
+    })
+    alert.present();
     return true;
   }
 }
