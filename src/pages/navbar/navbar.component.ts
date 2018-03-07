@@ -17,7 +17,7 @@ import { PushComponent } from '../push/push.component';
 export class NavbarComponent {
     @ViewChild(Nav) nav: Nav;
 
-    rootPage: any = ContactPage;
+    rootPage: any = HomePage;
     currentPage;
 
     pages: Array<{ title: string, component: any }>;
@@ -28,10 +28,10 @@ export class NavbarComponent {
         // used for an example of ngFor and navigation
         this.pages = [
             { title: 'Home', component: HomePage },
-            { title: 'About', component: AboutPage },
+            { title: 'Countries', component: AboutPage },
             { title: 'Interview Portal', component: TestsComponent },
             { title: 'Contact', component: ContactPage },
-            { title: 'Push', component: PushComponent }
+            // { title: 'Push', component: PushComponent }
         ];
         this.currentPage = this.pages[0].title;
     }

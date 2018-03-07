@@ -4,6 +4,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 import { HttpModule } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { FilterPipe } from "../utilities/filter.pipe";
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -16,8 +17,10 @@ import { QuestionComponent } from '../pages/question/question.component';
 
 
 
-import { TabsPage } from '../pages/tabs/tabs';
+// import { TabsPage } from '../pages/tabs/tabs';
 import { NavbarComponent } from '../pages/navbar/navbar.component';
+
+import { httpService } from "../services/httpService";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -33,7 +36,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TestsComponent,
     QuestionComponent,
     NavbarComponent,
-    PushComponent
+    PushComponent,
+    FilterPipe
     // TabsPage
   ],
   imports: [
@@ -57,6 +61,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     LocalNotifications,
+    httpService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

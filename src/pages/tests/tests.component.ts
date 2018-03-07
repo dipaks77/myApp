@@ -12,13 +12,11 @@ import { Http } from "@angular/http";
 export class TestsComponent {
 
     private tests;
-    private questionPage: any;
-    private params: any;
 
     constructor(public navCtrl: NavController, public http: Http) { }
 
     ngOnInit() {
-        this.http.get("http://interviewapi.stagging.in/getQuizData")
+        this.http.get("assets/json/test_details.json")
             .map(response => response.json())
             .subscribe(tests => {
                 this.tests = tests.tests;

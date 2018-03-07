@@ -19,6 +19,9 @@
     margin-top: 50px;
     background: #f2f2f2;
 }
+.ion-page {
+    background: #f2f2f2;
+}
 div.card{
     margin-top: 50px;
 }
@@ -39,4 +42,15 @@ div.card{
 
 .form-control:focus{
     border: 1px solid #888;
+}
+
+
+button.btn{
+    border-radius: 0px;
+}
+
+.toast-error{
+    >div{
+        background: #ce2626 !important;
+    }
 }

@@ -30,7 +30,7 @@ export class QuestionComponent {
     ngOnInit() {
         let tests;
         let parent = this;
-        this.http.get("http://interviewapi.stagging.in/getQuizData")
+        this.http.get("assets/json/test_details.json")
             .map(response => response.json())
             .subscribe(response => {
                 tests = response.tests;
