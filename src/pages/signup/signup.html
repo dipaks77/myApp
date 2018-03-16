@@ -1,0 +1,54 @@
+<ion-content padding>
+    <form #signupForm="ngForm" (ngSubmit)="Signup(signupForm, $event)" novalidate>
+        <ion-list>
+
+            <ion-item>
+                <ion-label floating>First Name</ion-label>
+                <ion-input type="text" id="fname" name="firstName" ngModel #firstName="ngModel" class="form-control" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <small class="text-danger" *ngIf="signupForm.submitted && firstName.errors && firstName.errors.required">First name field is required!</small>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>Last Name</ion-label>
+                <ion-input type="text" name="lastName" ngModel #lastName="ngModel" class="form-control" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <small class="text-danger" *ngIf="signupForm.submitted && lastName.errors && lastName.errors.required">Last name field is required!</small>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>Email</ion-label>
+                <ion-input type="email" name="email" ngModel #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control"
+                    required></ion-input>
+            </ion-item>
+            <ion-item>
+                <small class="text-danger" *ngIf="signupForm.submitted && email.errors && email.errors.required">Email field is required!</small>
+                <small class="text-danger" *ngIf="signupForm.submitted && email.errors && email.errors.pattern">Invalid Email!</small>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>Password</ion-label>
+                <ion-input type="password" name="password" ngModel #password="ngModel" class="form-control" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <small class="text-danger" *ngIf="signupForm.submitted && password.errors && password.errors.required">Password field is required!</small>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>Profile Picture</ion-label>                
+            </ion-item>
+            <ion-item style="display: none">
+                <input type="file" name="name" id="uploadImage" (change)= "Upload($event)">
+            </ion-item>
+            <ion-item>
+                <img src="assets/imgs/default.png" class="img img-fluid img-thumbnail" width="50" (click)="browseImage()">
+            </ion-item>
+
+            <ion-item>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </ion-item>
+        </ion-list>
+    </form>
+</ion-content>

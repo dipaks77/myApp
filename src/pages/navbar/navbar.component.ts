@@ -4,10 +4,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../home/home';
-import { AboutPage } from '../about/about';
+import { CountryPage } from '../country/country';
+import { SignupPage } from '../signup/signup.component';
 import { ContactPage } from '../contact/contact';
 import { TestsComponent } from '../tests/tests.component';
-import { PushComponent } from '../push/push.component';
 
 
 
@@ -17,7 +17,7 @@ import { PushComponent } from '../push/push.component';
 export class NavbarComponent {
     @ViewChild(Nav) nav: Nav;
 
-    rootPage: any = HomePage;
+    rootPage: any = SignupPage;
     currentPage;
 
     pages: Array<{ title: string, component: any }>;
@@ -28,9 +28,10 @@ export class NavbarComponent {
         // used for an example of ngFor and navigation
         this.pages = [
             { title: 'Home', component: HomePage },
-            { title: 'Countries', component: AboutPage },
+            { title: 'Countries', component: CountryPage },
             { title: 'Interview Portal', component: TestsComponent },
             { title: 'Contact', component: ContactPage },
+            { title: 'Register', component: SignupPage },
             // { title: 'Push', component: PushComponent }
         ];
         this.currentPage = this.pages[0].title;

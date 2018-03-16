@@ -6,9 +6,10 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { FilterPipe } from "../utilities/filter.pipe";
 
-import { AboutPage } from '../pages/about/about';
+import { CountryPage } from '../pages/country/country';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
+import { SignupPage } from '../pages/signup/signup.component';
 import { PushComponent } from '../pages/push/push.component';
 
 
@@ -24,11 +25,12 @@ import { httpService } from "../services/httpService";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ServicesProvider } from '../providers/services/services';
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
+    CountryPage,
     ContactPage,
     HomePage,
 
@@ -36,21 +38,23 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TestsComponent,
     QuestionComponent,
     NavbarComponent,
+    SignupPage,
     PushComponent,
     FilterPipe
     // TabsPage
   ],
   imports: [
     BrowserModule,
-    HttpModule,    
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
+    CountryPage,
     ContactPage,
     HomePage,
+    SignupPage,
     TestsComponent,
     QuestionComponent,
     NavbarComponent,
@@ -62,7 +66,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SplashScreen,
     LocalNotifications,
     httpService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    ServicesProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }

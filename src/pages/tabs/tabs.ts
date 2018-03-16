@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { AboutPage } from '../about/about';
+import { CountryPage } from '../country/country';
 import { ContactPage } from '../contact/contact';
 
 import { TestsComponent } from "../tests/tests.component"
@@ -13,7 +13,7 @@ import { TestsComponent } from "../tests/tests.component"
 export class TabsPage {
 
   tab1Root = TestsComponent;
-  tab2Root = AboutPage;
+  tab2Root = CountryPage;
   tab3Root = ContactPage;
   // tab1Root = TestsComponent;
   // tabQuestion = QuestionComponent;

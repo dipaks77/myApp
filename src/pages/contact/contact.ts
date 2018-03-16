@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController,ToastController } from 'ionic-angular';
+import { NavController, AlertController, ToastController } from 'ionic-angular';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { httpService } from "../../services/httpService";
 
@@ -11,21 +11,19 @@ import { httpService } from "../../services/httpService";
 export class ContactPage {
 
   constructor(
-    public navCtrl: NavController, 
-    public notification: LocalNotifications, 
-    public alert: AlertController, 
+    public navCtrl: NavController,
+    public notification: LocalNotifications,
+    public alert: AlertController,
     public http: httpService,
     private toast: ToastController
-  ) {
-
-  }
+  ) { }
 
 
 
   Submit(form: any, event: Event) {
     event.preventDefault();
     if (form.invalid) {
-      this.toast.create({        
+      this.toast.create({
         message: "Please fill out all the fields correctly first!",
         position: "top",
         showCloseButton: true,
@@ -42,6 +40,7 @@ export class ContactPage {
     })
     alert.present();
     form.resetForm();
+    form.submitted = false;
     return true;
   }
 }

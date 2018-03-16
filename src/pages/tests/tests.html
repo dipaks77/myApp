@@ -1,26 +1,22 @@
 <ion-content padding>
-    <div class="card">
-        <div class="card-body">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Test Name</th>
-                        <th>Questions</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let test of tests; let i = index">
-                        <td>{{i + 1}}</td>
-                        <td>{{test.name}}</td>
-                        <td>{{test.questions.length}}</td>
-                        <td>
-                            <button class="btn btn-warning" (click)="goToQuestion(test._id)">Start Test</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Test Name</th>
+                <th>Questions</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let test of tests; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{test.name}}</td>
+                <td>{{test.questions.length}}</td>
+                <td>
+                    <button ion-button small color="warning" (click)="goToQuestion(test._id)">Start Test</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </ion-content>

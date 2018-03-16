@@ -4,10 +4,10 @@ import { Http } from "@angular/http";
 import 'rxjs/add/operator/map'
 
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html'
+  selector: 'page-country',
+  templateUrl: 'country.html'
 })
-export class AboutPage {
+export class CountryPage {
   private countries;
   constructor(public navCtrl: NavController, private http: Http) {
 
